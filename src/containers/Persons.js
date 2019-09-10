@@ -11,7 +11,6 @@ class Persons extends Component {
     }
 
     personAddedHandler = () => {
-        console.log('CLICKED!');
         const newPerson = {
             id: Math.random(), // not really unique but good enough here!
             name: 'Max',
@@ -30,7 +29,7 @@ class Persons extends Component {
         return (
             <div>
                 <AddPerson personAdded={this.personAddedHandler} />
-                {this.state.persons.map(person => (
+                {this.props.persons.map(person => (
                     <Person 
                         key={person.id}
                         name={person.name} 
